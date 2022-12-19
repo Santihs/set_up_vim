@@ -19,22 +19,29 @@ keymap.set("n", "<Space>,", "$a,<Esc>")
 -- keymap.set("n", "<leader>se", "<C-w>=")
 -- keymap.set("n", "<leader>sx", ":close<CR>")
 
-keymap.set("n", "<leader>v", ":vsplit<CR>")
-keymap.set("n", "<leader>tx", ":BufferKill<CR>")
-keymap.set("n", "<leader>tn", ":BufferLineCycleNext<CR>")
+-- keymap.set("n", "<leader>v", ":vsplit<CR>")
+-- keymap.set("n", "<leader>tx", ":BufferKill<CR>")
+-- keymap.set("n", "<leader>tn", ":BufferLineCycleNext<CR>")
 keymap.set("n", "<M-l>", ":BufferLineCycleNext<CR>")
-keymap.set("n", "<leader>tp", ":BufferLineCyclePrev<CR>")
+-- keymap.set("n", "<leader>tp", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "<M-h>", ":BufferLineCyclePrev<CR>")
 
 -- vim maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+-- keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- nvim tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<Cr>")
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+-- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+-- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
+-- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
+-- keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+-- keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+-- Select words
+keymap.set("v", "\"", "c\"\"<Esc>P")
+keymap.set("v", "'", "c''<Esc>P")
+keymap.set("v", "{", "c{}<Esc>P")
+keymap.set("v", "(", "c()<Esc>P")
+-- keymap.set("v", "[", "c[]<Esc>P")

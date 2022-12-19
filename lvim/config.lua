@@ -170,10 +170,13 @@ lvim.plugins = {
   },
   {
     'windwp/nvim-ts-autotag'
+  },
+  {
+    'mg979/vim-visual-multi'
   }
 }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
+-- Autocommands (https://nmg979/vim-visual-multieovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
