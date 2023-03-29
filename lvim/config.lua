@@ -7,19 +7,25 @@ a global executable or a path to
 an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-require("santihs.core.colorscheme")
-require("santihs.core.options")
-require("santihs.core.keymaps")
-require("santihs.plugins.lsp.mason")
-require("santihs.plugins.lsp.null-ls")
+require("santihs.keymap")
+require("santihs.colorscheme")
+require("santihs.options")
 
 -- general
-lvim.log.level              = "warn"
-lvim.format_on_save.enabled = true
-lvim.transparent_window     = true
--- lvim.colorscheme = "lunar"
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
+lvim.log.level                                      = "warn"
+lvim.format_on_save.enabled                         = true
+lvim.transparent_window                             = true
+
+-- keymappings [view all the defaults by pressing <leader>Lk]
+lvim.leader                                         = "space"
+-- add your own keymapping
+lvim.keys.normal_mode["<C-s>"]                      = ":w<cr>"
+-- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+-- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+-- unmap a default keymapping
+-- vim.keymap.del("n", "<C-Up>")
+-- override a default keymapping
+-- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -57,14 +63,14 @@ lvim.transparent_window     = true
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.alpha.active                           = true
+lvim.builtin.alpha.mode                             = "dashboard"
+lvim.builtin.terminal.active                        = true
+lvim.builtin.nvimtree.setup.view.side               = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
+lvim.builtin.treesitter.ensure_installed            = {
   "bash",
   "c",
   "javascript",
@@ -79,9 +85,17 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enable = true
-
+lvim.builtin.treesitter.ignore_install              = { "haskell" }
+lvim.builtin.treesitter.highlight.enable            = true
+lvim.builtin.treesitter.auto_install                = true
+lvim.builtin.treesitter.autotag                     = true
+lvim.builtin.treesitter.filetypes                   = { 'html', 'javascript', 'typescript', 'javascriptreact',
+  'typescriptreact', 'svelte',
+  'vue', 'tsx', 'jsx', 'rescript',
+  'xml',
+  'php',
+  'markdown',
+  'glimmer', 'handlebars', 'hbs' }
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
@@ -158,26 +172,20 @@ lvim.builtin.treesitter.highlight.enable = true
 -- }
 
 -- Additional Plugins
-lvim.plugins = {
-  -- {
-  --   "folke/trouble.nvim",
-  --   cmd = "TroubleToggle",
-  -- },
+lvim.plugins                                        = {
   {
     'bluz71/vim-nightfly-colors',
   },
-  {
-    'jayp0521/mason-null-ls.nvim'
-  },
-  {
-    'windwp/nvim-ts-autotag'
-  },
-  {
-    'mg979/vim-visual-multi'
-  }
+  { "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+
+      }
+    end }
 }
 
--- Autocommands (https://nmg979/vim-visual-multieovim.io/doc/user/autocmd.html)
+-- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only

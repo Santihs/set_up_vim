@@ -1,4 +1,6 @@
 require("santihs.keymap")
+require("santihs.packer")
+
 local opt = vim.opt -- for conciseness
 -- line numbers
 opt.relativenumber = true
