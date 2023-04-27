@@ -85,6 +85,7 @@ lvim.builtin.treesitter.ensure_installed            = {
   "yaml",
 }
 
+lvim.builtin.treesitter.rainbow.enable              = true
 lvim.builtin.treesitter.ignore_install              = { "haskell" }
 lvim.builtin.treesitter.highlight.enable            = true
 lvim.builtin.treesitter.auto_install                = true
@@ -176,13 +177,18 @@ lvim.plugins                                        = {
   {
     'bluz71/vim-nightfly-colors',
   },
-  { "folke/todo-comments.nvim",
+  {
+    "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("todo-comments").setup {
 
       }
-    end }
+    end
+  },
+  {
+    "mrjones2014/nvim-ts-rainbow"
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
