@@ -1,5 +1,6 @@
 local opt = vim.opt
 
+opt.guifont = 'JetBrainsMono Nerd Font Regular:h12:dlig'
 opt.relativenumber = true
 opt.number = true
 opt.showcmd = true

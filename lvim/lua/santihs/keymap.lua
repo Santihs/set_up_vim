@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -18,6 +19,7 @@ keymap.set("", "<Space>k", "10kzz")
 keymap.set("n", "<Space>n;", "$a;<Esc>")
 keymap.set("n", "<Space>,", "$a,<Esc>")
 keymap.set("n", "G", "Gzz")
+keymap.set("n", "<C-o>", "<C-o>zz")
 
 -- keymap.set("n", "<leader>sv", "<C-w>v")
 -- keymap.set("n", "<leader>sh", "<C-w>s")
@@ -52,3 +54,14 @@ keymap.set("v", "(", "c()<Esc>P")
 keymap.set("n", "<M-S-k>", "yyP")
 keymap.set("n", "<M-S-j>", "yyp")
 -- keymap.set("v", "[", "c[]<Esc>P")
+keymap.set('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+keymap.set('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+keymap.set('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+
+
+keymap.set("n", "q", "<nop>")
+
+keymap.set("v", "p", '"_dP', opts)
+
+keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)

@@ -1,1 +1,1 @@
-lvim.colorscheme = "nightfly"
+lvim.colorscheme = "tokyonight-storm"

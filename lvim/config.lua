@@ -188,6 +188,14 @@ lvim.plugins                                        = {
   },
   {
     "mrjones2014/nvim-ts-rainbow"
+  },
+  {
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  },
+  {
+    "tpope/vim-surround"
   }
 }
 

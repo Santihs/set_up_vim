@@ -1,0 +1,16 @@
+noremap <Leader> <Space>
+inoremap jj <Esc>
+
+nnoremap <Space>; A;<Esc>
+nnoremap <Space>, A,<Esc>
+nnoremap <Space>j 10jzz
+nnoremap <Space>k 10kzz
+
+vnoremap p "_dP
+vnoremap ( c()<Esc>P
+vnoremap " c""<Esc>P
+vnoremap ' c''<Esc>P
+vnoremap [ c[]<Esc>P
+vnoremap { c{}<Esc>P
+vnoremap <Space>j 10jzz
+vnoremap <Space>k 10kzz
