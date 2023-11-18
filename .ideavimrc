@@ -1,3 +1,10 @@
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-surround'
+
+set highlightedyank # Highlight what you try to copy
+let g:highlightedyank_highlight_duration = 10
+let g:highlightedyank_highlight_in_visual = 0
+
 noremap <Leader> <Space>
 inoremap jj <Esc>
 
@@ -14,3 +21,4 @@ vnoremap [ c[]<Esc>P
 vnoremap { c{}<Esc>P
 vnoremap <Space>j 10jzz
 vnoremap <Space>k 10kzz
+
