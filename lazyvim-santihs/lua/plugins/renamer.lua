@@ -1,8 +1,4 @@
 return {
-  {
-    "filipdutescu/renamer.nvim",
-    config = function()
-      require("renamer").setup({})
-    end,
-  },
+  "smjonas/inc-rename.nvim",
+  config = true,
 }
