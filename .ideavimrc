@@ -12,6 +12,7 @@ nnoremap <Space>; A;<Esc>
 nnoremap <Space>, A,<Esc>
 nnoremap <Space>j 10jzz
 nnoremap <Space>k 10kzz
+nnoremap G Gzz
 
 vnoremap p "_dP
 vnoremap ( c()<Esc>P
