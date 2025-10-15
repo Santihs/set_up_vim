@@ -71,7 +71,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a6a6a6"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aliases docker docker-compose dotnet npm nvm vscode git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(aliases docker docker-compose dotnet npm nvm vscode git zsh-autosuggestions zsh-syntax-highlighting yarn rust)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,8 +104,6 @@ alias cl=clear
 alias ll="ls -lah"
 alias llt="ls -laht"
 
-xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -130,3 +128,8 @@ _dotnet_zsh_complete()
 compdef _dotnet_zsh_complete dotnet
 
 export PATH=$HOME/.local/bin:$PATH
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH=$PATH:/snap/bin
+export PATH="$PATH:$/HOME/.dotnet/tools"
+export PATH="$HOME/.fzf/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
